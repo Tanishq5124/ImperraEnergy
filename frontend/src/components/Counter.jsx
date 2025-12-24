@@ -6,6 +6,7 @@ export const Counter = ({ end, duration = 2000, suffix = '', prefix = '' }) => {
   const counterRef = useRef(null);
 
   useEffect(() => {
+    const currentRef = counterRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -15,13 +16,13 @@ export const Counter = ({ end, duration = 2000, suffix = '', prefix = '' }) => {
       { threshold: 0.5 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
