@@ -5,7 +5,7 @@ export const companyInfo = {
   tagline: "ENERGY Engineered for tomorrow",
   founded: 2006,
   rating: "SMERA 1B",
-  phone: "+91 99797 45404",
+  phone: "+91 93779 99900",
   email: "imperraenergypvtltd@gmail.com",
   address: "203, 2nd Floor, Orleans Complex, Sosyo Circle, Althan, Surat - 395017",
   experience: "20+",
