@@ -10,6 +10,31 @@ const Clients = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Function to get initials from company name
+  const getInitials = (name) => {
+    const words = name.split(' ');
+    if (words.length === 1) {
+      return name.substring(0, 2).toUpperCase();
+    }
+    return words.slice(0, 2).map(word => word[0]).join('').toUpperCase();
+  };
+
+  // Function to generate consistent color based on name
+  const getLogoColor = (name) => {
+    const colors = [
+      'from-blue-500 to-blue-600',
+      'from-green-500 to-green-600',
+      'from-purple-500 to-purple-600',
+      'from-orange-500 to-orange-600',
+      'from-red-500 to-red-600',
+      'from-teal-500 to-teal-600',
+      'from-indigo-500 to-indigo-600',
+      'from-pink-500 to-pink-600'
+    ];
+    const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return colors[hash % colors.length];
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -40,14 +65,19 @@ const Clients = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {clients.map((client, index) => (
               <Card
                 key={index}
-                className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-2"
+                className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 group"
               >
-                <CardContent className="p-6 flex items-center justify-center h-32">
-                  <span className="text-lg font-bold text-gray-700 text-center">{client.name}</span>
+                <CardContent className="p-4 flex flex-col items-center justify-center h-28">
+                  {/* Logo Circle with Initials */}
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${getLogoColor(client.name)} flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}>
+                    <span className="text-white font-bold text-sm">{getInitials(client.name)}</span>
+                  </div>
+                  {/* Company Name */}
+                  <span className="text-sm font-semibold text-gray-700 text-center leading-tight">{client.name}</span>
                 </CardContent>
               </Card>
             ))}
