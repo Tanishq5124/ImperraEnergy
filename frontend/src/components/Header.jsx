@@ -128,7 +128,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 bg-[#192c42]/98 backdrop-blur-md">
+          <div className="lg:hidden py-4 bg-[#192B43]/98 backdrop-blur-md">
             {navLinks.map((link) => (
               <div key={link.name}>
                 <Link
