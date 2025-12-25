@@ -76,7 +76,7 @@ export const Header = () => {
                     </button>
                     {servicesDropdownOpen && (
                       <div
-                        className="absolute top-full left-0 mt-2 w-56 bg-[#192c42] rounded-lg shadow-xl py-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-full left-0 mt-2 w-56 bg-[#192B43] rounded-lg shadow-xl py-2 opacity-0 group-hover:opacity-100 transition-opacity"
                         onMouseEnter={() => setServicesDropdownOpen(true)}
                         onMouseLeave={() => setServicesDropdownOpen(false)}
                       >
