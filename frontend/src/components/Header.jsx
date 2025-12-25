@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -41,8 +41,8 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#1a2332]/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-[#192c42]/95 backdrop-blur-md shadow-lg'
+          : 'bg-[#192c42]'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -76,7 +76,7 @@ export const Header = () => {
                     </button>
                     {servicesDropdownOpen && (
                       <div
-                        className="absolute top-full left-0 mt-2 w-56 bg-[#1a2332] rounded-lg shadow-xl py-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-full left-0 mt-2 w-56 bg-[#192c42] rounded-lg shadow-xl py-2 opacity-0 group-hover:opacity-100 transition-opacity"
                         onMouseEnter={() => setServicesDropdownOpen(true)}
                         onMouseLeave={() => setServicesDropdownOpen(false)}
                       >
@@ -128,7 +128,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 bg-[#1a2332]/98 backdrop-blur-md">
+          <div className="lg:hidden py-4 bg-[#192c42]/98 backdrop-blur-md">
             {navLinks.map((link) => (
               <div key={link.name}>
                 <Link
