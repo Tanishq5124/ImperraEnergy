@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { useToast } from '../hooks/use-toast';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 export const ContactForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,27 +26,41 @@ export const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Mock submission
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Inquiry Submitted!",
-      description: "Thank you for your interest. Our team will contact you within 24 hours.",
-    });
+    try {
+      // Submit to backend API
+      const response = await axios.post(`${BACKEND_URL}/api/contact-inquiries`, formData);
+      
+      console.log('Form submitted successfully:', response.data);
+      
+      toast({
+        title: "Inquiry Submitted!",
+        description: "Thank you for your interest. Our team will contact you within 24 hours.",
+      });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      projectType: 'Solar Park EPC',
-      capacity: '',
-      message: ''
-    });
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        projectType: 'Solar Park EPC',
+        capacity: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your inquiry. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,6 +76,7 @@ export const ContactForm = () => {
             required
             placeholder="John Doe"
             className="mt-2"
+            disabled={isSubmitting}
           />
         </div>
         <div>
@@ -71,6 +90,7 @@ export const ContactForm = () => {
             required
             placeholder="john@company.com"
             className="mt-2"
+            disabled={isSubmitting}
           />
         </div>
       </div>
@@ -87,6 +107,7 @@ export const ContactForm = () => {
             required
             placeholder="+91 99999 99999"
             className="mt-2"
+            disabled={isSubmitting}
           />
         </div>
         <div>
@@ -98,6 +119,7 @@ export const ContactForm = () => {
             onChange={handleChange}
             placeholder="Your Company"
             className="mt-2"
+            disabled={isSubmitting}
           />
         </div>
       </div>
@@ -111,6 +133,7 @@ export const ContactForm = () => {
             value={formData.projectType}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
             className="mt-2 w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
           >
             <option value="Solar Park EPC">Solar Park EPC</option>
@@ -128,6 +151,7 @@ export const ContactForm = () => {
             onChange={handleChange}
             placeholder="e.g., 5 MW"
             className="mt-2"
+            disabled={isSubmitting}
           />
         </div>
       </div>
@@ -142,14 +166,16 @@ export const ContactForm = () => {
           placeholder="Tell us about your project requirements..."
           rows={5}
           className="mt-2"
+          disabled={isSubmitting}
         />
       </div>
 
       <Button
         type="submit"
+        disabled={isSubmitting}
         className="w-full bg-[#a3e635] text-[#1a2332] hover:bg-[#84cc16] font-semibold text-lg py-6"
       >
-        Submit Inquiry
+        {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
       </Button>
     </form>
   );
