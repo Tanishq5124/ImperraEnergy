@@ -87,6 +87,45 @@ async def get_status_checks():
     
     return status_checks
 
+# Contact Inquiry endpoints
+@api_router.post("/contact-inquiries", response_model=ContactInquiry)
+async def create_contact_inquiry(inquiry: ContactInquiryCreate):
+    """
+    Save contact form submission to MongoDB
+    """
+    inquiry_dict = inquiry.dict()
+    inquiry_obj = ContactInquiry(**inquiry_dict)
+    
+    # Save to database
+    await db.contact_inquiries.insert_one(inquiry_obj.dict())
+    
+    logger.info(f"New contact inquiry received from {inquiry_obj.name} ({inquiry_obj.email})")
+    
+    return inquiry_obj
+
+@api_router.get("/contact-inquiries", response_model=List[ContactInquiry])
+async def get_contact_inquiries(status: str = None, limit: int = 100):
+    """
+    Retrieve contact inquiries from MongoDB
+    Optional filter by status: new, contacted, converted
+    """
+    query = {}
+    if status:
+        query["status"] = status
+    
+    inquiries = await db.contact_inquiries.find(query).sort("timestamp", -1).to_list(limit)
+    return [ContactInquiry(**inquiry) for inquiry in inquiries]
+
+@api_router.get("/contact-inquiries/{inquiry_id}", response_model=ContactInquiry)
+async def get_contact_inquiry(inquiry_id: str):
+    """
+    Get a specific contact inquiry by ID
+    """
+    inquiry = await db.contact_inquiries.find_one({"id": inquiry_id})
+    if not inquiry:
+        raise HTTPException(status_code=404, detail="Inquiry not found")
+    return ContactInquiry(**inquiry)
+
 # Include the router in the main app
 app.include_router(api_router)
 
