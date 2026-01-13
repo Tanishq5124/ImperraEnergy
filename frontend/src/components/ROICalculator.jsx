@@ -29,11 +29,11 @@ export const ROICalculator = () => {
       return;
     }
 
-    // Calculations based on formulas
+    // Updated Calculations based on new formulas
     const monthlySavings = bill * 0.60;
     const annualSavings = monthlySavings * 12;
     const lifetimeSavings = annualSavings * 25;
-    const systemSize = bill / 1300;
+    const systemSize = (bill / 1300) * 0.55; // Updated formula with 55%
     const cost = systemSize * 30000;
     const investment = cost;
     const paybackPeriod = investment / annualSavings;
@@ -54,6 +54,12 @@ export const ROICalculator = () => {
   };
 
   const formatCurrency = (amount) => {
+    // Format in lakhs for large amounts
+    if (amount >= 10000000) {
+      return `₹${(amount / 10000000).toFixed(2)} Cr`;
+    } else if (amount >= 100000) {
+      return `₹${(amount / 100000).toFixed(2)} L`;
+    }
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency: 'INR',
