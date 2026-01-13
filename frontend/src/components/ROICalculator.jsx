@@ -176,8 +176,8 @@ export const ROICalculator = () => {
                     <div className="w-12 h-12 bg-[#a3e635]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Zap className="w-6 h-6 text-[#1a2332]" />
                     </div>
-                    <p className="text-sm text-gray-600 mb-1">Recommended System Size</p>
-                    <p className="text-2xl font-bold text-[#1a2332]">{results.systemSize} kW</p>
+                    <p className="text-sm text-gray-600 mb-2">Recommended System Size</p>
+                    <p className="text-3xl font-bold text-[#1a2332] break-words">{results.systemSize} kW</p>
                   </CardContent>
                 </Card>
 
@@ -186,8 +186,8 @@ export const ROICalculator = () => {
                     <div className="w-12 h-12 bg-[#a3e635]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Wallet className="w-6 h-6 text-[#1a2332]" />
                     </div>
-                    <p className="text-sm text-gray-600 mb-1">Estimated Investment</p>
-                    <p className="text-2xl font-bold text-[#1a2332]">{formatCurrency(results.investment)}</p>
+                    <p className="text-sm text-gray-600 mb-2">Estimated Investment</p>
+                    <p className="text-2xl md:text-3xl font-bold text-[#1a2332] break-words">{formatCurrency(results.investment)}</p>
                   </CardContent>
                 </Card>
 
@@ -196,8 +196,8 @@ export const ROICalculator = () => {
                     <div className="w-12 h-12 bg-[#a3e635]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Clock className="w-6 h-6 text-[#1a2332]" />
                     </div>
-                    <p className="text-sm text-gray-600 mb-1">Payback Period</p>
-                    <p className="text-2xl font-bold text-[#1a2332]">{results.paybackPeriod} years</p>
+                    <p className="text-sm text-gray-600 mb-2">Payback Period</p>
+                    <p className="text-3xl font-bold text-[#1a2332] break-words">{results.paybackPeriod} years</p>
                   </CardContent>
                 </Card>
 
@@ -206,8 +206,8 @@ export const ROICalculator = () => {
                     <div className="w-12 h-12 bg-[#a3e635]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <TrendingUp className="w-6 h-6 text-[#1a2332]" />
                     </div>
-                    <p className="text-sm text-gray-600 mb-1">25-Year Savings</p>
-                    <p className="text-2xl font-bold text-[#1a2332]">{formatCurrency(results.lifetimeSavings)}</p>
+                    <p className="text-sm text-gray-600 mb-2">25-Year Savings</p>
+                    <p className="text-2xl md:text-3xl font-bold text-[#1a2332] break-words">{formatCurrency(results.lifetimeSavings)}</p>
                   </CardContent>
                 </Card>
               </div>
