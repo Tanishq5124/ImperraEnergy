@@ -84,3 +84,28 @@ select:focus-visible {
     outline: 2px solid #a3e635;
     outline-offset: 2px;
 }
+
+/* Mobile Responsive Typography */
+@media (max-width: 640px) {
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Ensure buttons are full width on mobile */
+    .mobile-full-width {
+        width: 100% !important;
+    }
+}
