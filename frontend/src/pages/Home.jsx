@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Counter } from '../components/Counter';
 import { ROICalculator } from '../components/ROICalculator';
+import { FAQSection } from '../components/FAQSection';
 import { stats, services, whyChoose, solarModels, processSteps, projects, clients, companyInfo } from '../mock';
 
 const Home = () => {
