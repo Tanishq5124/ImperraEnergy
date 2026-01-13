@@ -387,6 +387,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQSection />
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#1a2332] to-[#2d3748] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
