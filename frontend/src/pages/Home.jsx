@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Target, Wrench, TrendingUp, Building2, Zap, Phone } from 'lucide-react';
+import { ArrowRight, Award, Target, Wrench, TrendingUp, Building2, Zap, Phone, Calculator, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Counter } from '../components/Counter';
+import { ROICalculator } from '../components/ROICalculator';
 import { stats, services, whyChoose, solarModels, processSteps, projects, clients, companyInfo } from '../mock';
 
 const Home = () => {
@@ -22,8 +23,8 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Redesigned */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -31,41 +32,107 @@ const Home = () => {
             alt="Solar Energy"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/85 to-[#1a2332]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/90 to-[#1a2332]/75"></div>
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
-              Energy. <span className="text-[#a3e635]">Engineered</span> for Tomorrow.
+        <div className="container mx-auto px-4 z-10 py-24">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Trust Badges - Pill Style */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 flex items-center space-x-2">
+                <span className="text-[#a3e635] text-lg">⭐</span>
+                <span className="text-white font-semibold text-sm md:text-base">300MW+ Installations</span>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 flex items-center space-x-2">
+                <span className="text-[#a3e635] text-lg">🏆</span>
+                <span className="text-white font-semibold text-sm md:text-base">SMERA 1B Rated</span>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 flex items-center space-x-2">
+                <CheckCircle className="text-[#a3e635] w-5 h-5" />
+                <span className="text-white font-semibold text-sm md:text-base">25-Year Warranty</span>
+              </div>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-delay">
+              Cut Your Electricity Bills by{' '}
+              <span className="text-[#a3e635]">60%</span>
+              <br />
+              with Premium Solar Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-delay">
-              Powering India's transition to clean, reliable solar energy
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2">
-              <Link to="/contact">
-                <Button size="lg" className="bg-[#a3e635] text-[#1a2332] hover:bg-[#84cc16] font-semibold text-lg px-8 py-6">
-                  Get a Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+
+            {/* Subheadline */}
+            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-base md:text-lg text-gray-200 mb-8 animate-fade-in-delay-2">
+              <span className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-[#a3e635] mr-2" />
+                25-Year Warranty
+              </span>
+              <span className="hidden md:inline text-gray-500">•</span>
+              <span className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-[#a3e635] mr-2" />
+                Government Subsidies Available
+              </span>
+              <span className="hidden md:inline text-gray-500">•</span>
+              <span className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-[#a3e635] mr-2" />
+                3-Month Installation Guarantee
+              </span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6 animate-fade-in-delay-2">
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto bg-[#a3e635] text-[#1a2332] hover:bg-[#84cc16] font-bold text-base md:text-lg px-8 py-6 shadow-2xl"
+                onClick={() => document.getElementById('roi-calculator')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Calculator className="mr-2 w-5 h-5" />
+                Calculate Your Savings
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Link to="/contact" className="w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="w-full border-2 border-white text-white hover:bg-white hover:text-[#1a2332] font-bold text-base md:text-lg px-8 py-6"
+                >
+                  <Phone className="mr-2 w-5 h-5" />
+                  Get Free Site Assessment
                 </Button>
               </Link>
-              <Link to="/projects">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#1a2332] font-semibold text-lg px-8 py-6">
-                  View Our Projects
-                </Button>
-              </Link>
+            </div>
+
+            {/* Trust Line */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-6 text-sm md:text-base text-gray-300 animate-fade-in-delay-2">
+              <span className="flex items-center">
+                <CheckCircle className="w-4 h-4 text-[#a3e635] mr-2" />
+                No upfront payment
+              </span>
+              <span className="hidden sm:inline text-gray-500">•</span>
+              <span className="flex items-center">
+                <CheckCircle className="w-4 h-4 text-[#a3e635] mr-2" />
+                EMI options available
+              </span>
+              <span className="hidden sm:inline text-gray-500">•</span>
+              <span className="flex items-center">
+                <CheckCircle className="w-4 h-4 text-[#a3e635] mr-2" />
+                Subsidy assistance included
+              </span>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
+
+      {/* ROI Calculator Section - Immediately After Hero */}
+      <ROICalculator />
 
       {/* Trust Indicators */}
       <section className="bg-white py-12 border-b">
