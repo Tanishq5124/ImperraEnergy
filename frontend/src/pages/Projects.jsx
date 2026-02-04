@@ -38,7 +38,7 @@ const Projects = () => {
         <div className="container mx-auto px-4 z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">Our Projects</h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            72+ MW of solar park installations powering India's industrial growth
+            70+ MW of solar park installations powering India's industrial growth
           </p>
         </div>
       </section>

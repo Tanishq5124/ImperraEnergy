@@ -89,7 +89,7 @@ export default function AboutPage() {
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-8 -left-8 bg-[#1a2332] text-white p-6 rounded-xl shadow-xl">
-                <p className="text-4xl font-bold text-[#a3e635]">72+</p>
+                <p className="text-4xl font-bold text-[#a3e635]">70+</p>
                 <p className="text-sm">MW Installed</p>
               </div>
             </motion.div>

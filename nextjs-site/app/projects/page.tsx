@@ -64,7 +64,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xl text-gray-200 max-w-3xl mx-auto"
           >
-            72+ MW of solar park installations powering India's industrial growth
+            70+ MW of solar park installations powering India's industrial growth
           </motion.p>
         </div>
       </section>
