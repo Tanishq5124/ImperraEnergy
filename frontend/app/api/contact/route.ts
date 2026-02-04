@@ -1,18 +1,5 @@
 import { NextResponse } from 'next/server'
 
-// For now, we'll store in memory. In production, connect to MongoDB
-const inquiries: Array<{
-  id: string
-  name: string
-  email: string
-  phone: string
-  company: string
-  service: string
-  message: string
-  timestamp: string
-  status: string
-}> = []
-
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -27,37 +14,43 @@ export async function POST(request: Request) {
       )
     }
 
-    // Create inquiry object
-    const inquiry = {
-      id: Date.now().toString(),
+    // Forward to FastAPI backend
+    const backendUrl = process.env.BACKEND_URL || 'http://localhost:8001'
+    
+    const backendPayload = {
       name,
       email,
       phone,
       company: company || '',
-      service,
-      message,
-      timestamp: new Date().toISOString(),
-      status: 'new'
+      projectType: service, // Map 'service' to 'projectType' for backend
+      capacity: '',
+      message
     }
 
-    // Store inquiry (in production, save to MongoDB)
-    inquiries.push(inquiry)
+    const response = await fetch(`${backendUrl}/api/contact-inquiries`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(backendPayload),
+    })
 
-    // Log for debugging
-    console.log('New contact inquiry:', inquiry)
-
-    // In production, you could also:
-    // 1. Send email notification using Resend/Nodemailer
-    // 2. Save to MongoDB database
-
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Inquiry submitted successfully',
-        id: inquiry.id 
-      },
-      { status: 200 }
-    )
+    if (response.ok) {
+      const data = await response.json()
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Inquiry submitted successfully',
+          id: data.id 
+        },
+        { status: 200 }
+      )
+    } else {
+      const errorData = await response.json()
+      console.error('Backend error:', errorData)
+      return NextResponse.json(
+        { error: 'Failed to submit inquiry' },
+        { status: 500 }
+      )
+    }
   } catch (error) {
     console.error('Error processing contact form:', error)
     return NextResponse.json(
@@ -68,6 +61,18 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  // Return all inquiries (in production, add authentication)
-  return NextResponse.json(inquiries)
+  try {
+    const backendUrl = process.env.BACKEND_URL || 'http://localhost:8001'
+    const response = await fetch(`${backendUrl}/api/contact-inquiries`)
+    
+    if (response.ok) {
+      const data = await response.json()
+      return NextResponse.json(data)
+    }
+    
+    return NextResponse.json([])
+  } catch (error) {
+    console.error('Error fetching inquiries:', error)
+    return NextResponse.json([])
+  }
 }
