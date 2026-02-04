@@ -8,15 +8,15 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 # Count total inquiries
-TOTAL=$(curl -s https://energytomorrow.preview.emergentagent.com/api/contact-inquiries | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
+TOTAL=$(curl -s https://solar-migration.preview.emergentagent.com/api/contact-inquiries | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
 
 echo "✅ Total Inquiries in Database: $TOTAL"
 echo ""
 
 # Count by status
-NEW=$(curl -s "https://energytomorrow.preview.emergentagent.com/api/contact-inquiries?status=new" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
-CONTACTED=$(curl -s "https://energytomorrow.preview.emergentagent.com/api/contact-inquiries?status=contacted" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
-CONVERTED=$(curl -s "https://energytomorrow.preview.emergentagent.com/api/contact-inquiries?status=converted" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
+NEW=$(curl -s "https://solar-migration.preview.emergentagent.com/api/contact-inquiries?status=new" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
+CONTACTED=$(curl -s "https://solar-migration.preview.emergentagent.com/api/contact-inquiries?status=contacted" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
+CONVERTED=$(curl -s "https://solar-migration.preview.emergentagent.com/api/contact-inquiries?status=converted" | python3 -c "import sys, json; print(len(json.load(sys.stdin)))")
 
 echo "📋 Status Breakdown:"
 echo "   🟢 New:       $NEW"
@@ -30,7 +30,7 @@ echo "🕒 LATEST INQUIRIES:"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 
-curl -s https://energytomorrow.preview.emergentagent.com/api/contact-inquiries | python3 << 'EOF'
+curl -s https://solar-migration.preview.emergentagent.com/api/contact-inquiries | python3 << 'EOF'
 import sys, json
 from datetime import datetime
 
@@ -63,6 +63,6 @@ EOF
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 echo "💡 For full details, run: python3 /app/view_inquiries.py"
-echo "🌐 Web Admin: https://energytomorrow.preview.emergentagent.com/admin"
-echo "📡 API View: https://energytomorrow.preview.emergentagent.com/api/contact-inquiries"
+echo "🌐 Web Admin: https://solar-migration.preview.emergentagent.com/admin"
+echo "📡 API View: https://solar-migration.preview.emergentagent.com/api/contact-inquiries"
 echo ""

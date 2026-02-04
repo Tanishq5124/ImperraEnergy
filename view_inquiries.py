@@ -8,7 +8,7 @@ import requests
 import sys
 from datetime import datetime
 
-BACKEND_URL = "https://energytomorrow.preview.emergentagent.com/api"
+BACKEND_URL = "https://solar-migration.preview.emergentagent.com/api"
 
 def format_date(date_str):
     """Format ISO date string to readable format"""

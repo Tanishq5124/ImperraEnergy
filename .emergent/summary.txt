@@ -1,0 +1,199 @@
+<analysis>**original_problem_statement**: The user wants to build a premium, multi-page website for their solar energy company, Imperra Energy Pvt Ltd.
+
+**PRODUCT REQUIREMENTS**:
+1.  **Initial Request**: Build a website based on data extracted from a company brochure. The site should include pages for Home, About, Services, Projects, Clients, Blog, and Contact. Features requested include project filtering, contact forms, and cool animations. Live chat was excluded.
+2.  **Contact Form Backend**: The data from the contact form should be stored in a database (MongoDB).
+3.  **Database Access**: The user needs a way to access and view the submitted form data.
+4.  **Hero Section Redesign**:
+    *   New Headline: “Cut Your Electricity Bills by 60% with Premium Solar Solutions”
+    *   Trust Badges: 300MW+ Installations, MNRE Certified, 25-Year Warranty.
+    *   CTAs: Calculate Your Savings (Primary) and Get Free Site Assessment (Secondary).
+    *   Subheadline and Trust Line with financing/guarantee details.
+    *   Must be mobile-responsive.
+5.  **ROI Calculator**:
+    *   To be placed immediately after the hero section.
+    *   Inputs: Monthly bill, Property type, City.
+    *   Calculates and displays: Potential Savings, System Size, Investment, Payback Period, 25-year Savings.
+    *   Formula updated to: .
+6.  **FAQ Section**: An accordion-style FAQ section with 8 specific questions and answers about solar energy.
+7.  **Data Update**: The user provided new, accurate company data, including a list of clients and projects, which should be reflected on the website.
+8.  **Tech Stack Migration**: A major request to migrate the entire website from the current React/FastAPI stack to a new stack:
+    *   **Framework**: Next.js (latest version, App Router)
+    *   **Styling**: Tailwind CSS
+    *   **Animations**: Framer Motion
+    *   **CMS**: Sanity.io
+    *   **Forms**: Next.js API route with email integration and database storage.
+
+**User's preferred language**: English
+
+**what currently exists?**
+There are two parallel application structures:
+1.  A fully-built multi-page React frontend with a FastAPI/MongoDB backend. Most pages are implemented with mock data, but the contact form is integrated with the backend and successfully saves data to MongoDB. An admin page was also created to view the data. This version incorporates the redesigned hero section, ROI calculator, and FAQ accordion.
+2.  A new, incomplete Next.js application in the  directory. The basic file structure, dependencies (, , , , etc.), and configuration files (, , ) have been created. The core data has been moved to . It is not yet a functional website.
+
+**Last working item**:
+- Last item agent was working: The agent was updating the data on the **existing React website** based on the user's latest input. This involved updating the  file with the correct client/project list and updating the  and  pages.
+- Status: IN PROGRESS
+- Agent Testing Done: Y (via screenshots)
+- Which testing method agent to use? screenshot tool
+- User Testing Done: N
+
+**All Pending/In progress Issue list**:
+- Issue 1: KPI counters on the homepage are incorrect (P0)
+- Issue 2: Custom domain backend requests fail (P1)
+
+Issues Detail:
+- **Issue 1**:
+    - **Description**: After updating the project and client data, the animated KPI counters on the React homepage (in the Trust Indicators section) are still displaying old data and animating up from zero, instead of showing the correct, static numbers from the new data. For example, it should show 50 MW based on the latest data dump.
+    - **Attempted fixes**: The agent updated the data source () but did not modify the  component to reflect the new static data. The last screenshot () confirms the issue.
+    - **Next debug checklist**:
+        1.  Check .
+        2.  Remove the counting-up animation logic.
+        3.  Modify the component to directly display the static metrics (e.g., 50 MW+, 20+ Years) from  or props.
+    - **Why fix this issue and what will be achieved with the fix?**: To display accurate company metrics on the homepage, which is crucial for building trust.
+    - **Status**: NOT STARTED
+    - **Is recurring issue?**: N
+    - **Should Test frontend/backend/both after fix?**: Frontend
+    - **Blocked on other issue**: None
+
+- **Issue 2**:
+    - **Description**: When the application is accessed via the custom domain (), form submissions fail. The agent diagnosed this as a Cloudflare 520 error, indicating a connection issue between Cloudflare and the origin backend server for API requests to .
+    - **Attempted fixes**: The agent verified the frontend  was pointing to the correct absolute backend URL. They concluded it's a platform-level DNS/proxy routing issue for the custom domain and suggested contacting Emergent support.
+    - **Next debug checklist**: This issue cannot be fixed by the agent. It requires external configuration of the custom domain's routing rules to correctly proxy requests to the backend service.
+    - **Why fix this issue and what will be achieved with the fix?**: This is a critical blocker for the application to be fully functional on its production custom domain.
+    - **Status**: BLOCKED
+    - **Is recurring issue?**: Y
+    - **Should Test frontend/backend/both after fix?**: Both
+    - **Blocked on other issue**: External support/platform configuration.
+
+**In progress Task List**:
+- Task 1: Complete Website Migration to Next.js (P0)
+
+Task Detail:
+- **Task 1**:
+    - **Where to resume**: The basic Next.js project structure, dependencies, and configuration are set up in . The user's updated data is in . The next step is **Phase 3: Component & Page Migration**. This involves recreating all the React components (Header, Footer, ROICalculator, FAQ, etc.) and pages (Home, About, etc.) within the Next.js App Router paradigm, using the new data and tech stack (Tailwind CSS, Framer Motion).
+    - **What will be achieved with this?**: This will fulfill the user's request for a complete technology stack upgrade to a modern, performant, and scalable Next.js application.
+    - **Status**: IN PROGRESS
+    - **Should Test frontend/backend/both after fix?**: Both
+    - **Blocked on something**: No
+
+**Upcoming and Future Tasks**
+-   **Upcoming Tasks**:
+    -   **Phase 3: Component & Page Migration (P0)**:
+        -   Recreate all UI components from the React app in .
+        -   Rebuild all pages in .
+        -   Integrate Framer Motion for animations.
+    -   **Phase 4: API Routes & Form Integration (P1)**:
+        -   Create a Next.js API route in  to handle contact form submissions.
+        -   Implement logic to send an email notification (using Resend or Nodemailer).
+        -   Implement logic to save the form data to a database.
+    -   **Phase 5: Sanity CMS & Sitemap (P2)**:
+        -   Integrate Sanity.io as a headless CMS to allow the user to edit content.
+        -   Generate a  for SEO.
+
+**Completed work in this session**
+-   **React/FastAPI Application**:
+    -   A multi-page website was built with pages for Home, About, Services, Projects, Clients, Contact, etc.
+    -   The contact form was integrated with a FastAPI backend to save inquiries to MongoDB ().
+    -   An admin panel () and a DB access guide were created to view form submissions.
+    -   **Redesigned Hero Section**: Implemented a new headline, trust badges, and CTAs.
+    -   **ROI Calculator**: Added a functional ROI calculator below the hero section.
+    -   **FAQ Section**: Added an accordion-style FAQ section.
+    -   **Data Update**: Updated the client and project data across the Projects and Clients pages.
+-   **Next.js Migration (Started)**:
+    -   Created a new project directory at .
+    -   Initialized a Next.js application and installed dependencies (, , , , , , , ).
+    -   Configured Tailwind CSS and created the basic  directory structure with  and .
+    -   Migrated the user's provided data into .
+
+**Earlier issues found/mentioned but not fixed**
+-   **Issue 1**: Custom domain  cannot connect to the backend API.
+    -   **Debug checklist**: The issue lies with Cloudflare routing/proxy configuration for the custom domain, which is outside the agent's control. It has been escalated for support.
+    -   **Why to solve this issue and what will be achieved with this?**: To make the contact form and any other backend-dependent features functional on the production domain.
+    -   **Should Test frontend/backend/both after fix**: Both
+    -   **Is recurring issue?**: Y
+
+**Known issue recurrence from previous fork**
+-   None.
+
+**Code Architecture**
+
+
+**Key Technical Concepts**
+-   **Original Stack**: React, FastAPI, MongoDB, CSS, JavaScript
+-   **New Stack (Migration Target)**: Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, Sanity.io (planned)
+
+**key DB schema**
+-   : 
+-   : 
+
+**changes in tech stack**
+-   A full migration is in progress from a React (CRA) + FastAPI + MongoDB stack to a modern Next.js (App Router) monorepo-style application. The FastAPI backend and  directory will be deprecated and replaced by the  directory, which will handle both frontend and backend logic via API routes.
+
+**All files of reference**
+-   : Updated with new Hero, ROI calculator, and FAQ sections.
+-   : New file for the calculator feature.
+-   : New file for the FAQ accordion.
+-   : Updated with the latest client and project data.
+-   : Updated to reflect new project data.
+-   : Updated to reflect new client data.
+-   : Modified to add the  endpoint.
+-   : New directory containing the skeleton for the Next.js migration.
+-   : New data file for the Next.js app containing the user-provided info.
+-   : New documentation file explaining how to access the database.
+
+**Areas that need refactoring**:
+-   The entire  and  are being replaced by the Next.js migration.
+-    needs to be fixed to show static data instead of animating old data.
+
+**key api endpoints**
+-   : Saves a new contact form submission to the database.
+-   : Retrieves all contact form submissions.
+
+**Critical Info for New Agent**
+-   The user has mandated a full technology stack migration to **Next.js**. You should prioritize continuing this migration, which is in its early stages in the  directory.
+-   The user has provided definitive and correct data for the company profile, clients, and projects. This data is available in  and has been placed in . Use this as the single source of truth for the new Next.js site.
+-   The custom domain () has a known issue where it cannot connect to the backend API. This is considered a platform issue and is blocked pending external support. Do not spend time trying to debug it.
+-   While the migration is the main goal, be aware that the old React site still has a minor bug with the homepage counters showing incorrect data.
+
+**documents and test reports created in this job**
+-   /app/DATABASE_ACCESS_GUIDE.md
+-   /app/view_inquiries.py
+-   /app/database_viewer.html
+-   /app/check_inquiries.sh
+
+**Last 10 User Messages and any pending HUMAN messages**
+1.  **User**: Provided detailed requirements for a Hero Section redesign and a new ROI Calculator.
+2.  **Agent**: Implemented the Hero redesign and ROI calculator.
+3.  **User**: Pointed out an overflow issue, requested a formula change for the calculator, and asked for an accordion FAQ section with specific content.
+4.  **Agent**: Fixed the overflow, updated the formula, and added the FAQ section.
+5.  **User**: Requested a major tech stack migration to Next.js, Sanity.io, and Framer Motion.
+6.  **Agent**: Asked clarifying questions about the migration scope.
+7.  **User**: Confirmed the full migration, hybrid form submission (email + DB), and Sanity.io choice.
+8.  **Agent**: Started the Next.js migration by setting up the project structure.
+9.  **User**: Asked to continue with the next phase and complete all the phases.
+10. **User**: Provided a large block of correct text for the company profile, clients, and projects, and asked to update the website data using this data. The agent used this to update the data files for both the old React app and the new Next.js app.
+
+**Project Health Check:**
+-   **Broken**:
+    -   The  application is currently just a scaffold and is not runnable.
+    -   Backend API calls are broken on the custom domain .
+    -   The KPI counters on the homepage of the React app display incorrect data.
+-   **Mocked**:
+    -   Most of the React application (pages other than the contact form) relies on data from .
+
+**3rd Party Integrations**
+-   **Cloudflare**: Used for the custom domain , currently causing a 520 error for backend API requests.
+-   **Sanity.io**: Planned for the Next.js migration as a headless CMS. Not yet implemented.
+
+**Testing status**
+-   Testing agent used after significant changes: NO
+-   Troubleshoot agent used after agent stuck in loop: NO
+-   Test files created: []
+-   Known regressions: The homepage counters on the React app are showing incorrect data after a recent data update.
+
+**Credentials to test flow:**
+N/A. The contact form does not require authentication.
+
+**What agent forgot to execute**
+The agent updated the data source () for the React application but forgot to update the  component on the homepage. As a result, the animated counters still show old, incorrect numbers instead of reflecting the new, correct company metrics provided by the user.</analysis>
