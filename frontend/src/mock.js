@@ -9,13 +9,13 @@ export const companyInfo = {
   email: "imperraenergypvtltd@gmail.com",
   address: "203, 2nd Floor, Orleans Complex, Sosyo Circle, Althan, Surat - 395017",
   experience: "Emerging",
-  totalMW: "50+",
+  totalMW: "72+",
   targetMW: "500",
   timeframe: "Next 3 Years"
 };
 
 export const stats = [
-  { label: "MW Installed", value: 50, suffix: "+" },
+  { label: "MW Installed", value: 72, suffix: "+" },
   { label: "Active Clients", value: 22, suffix: "+" },
   { label: "Target (3 Years)", value: 500, suffix: " MW" },
   { label: "Pan-India Presence", value: 15, suffix: "+", subtext: "States" }
@@ -194,14 +194,14 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Eagle Yarns Pvt Ltd",
-    client: "Eagle Yarns Pvt Ltd",
+    title: "Accel International",
+    client: "Accel International",
     capacity: "3 MW",
     type: "Industrial",
-    location: "Surat, Gujarat",
+    location: "Gujarat",
     year: 2024,
-    description: "Rooftop solar system for yarn manufacturing",
-    image: "https://images.unsplash.com/photo-1726866492047-7f9516558c6e",
+    description: "Industrial solar system for manufacturing operations",
+    image: "https://images.unsplash.com/photo-1735584509085-4a03c468ace4",
     featured: false
   },
   {
@@ -218,14 +218,14 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Accel International",
-    client: "Accel International",
+    title: "Eagle Yarns Pvt Ltd",
+    client: "Eagle Yarns Pvt Ltd",
     capacity: "3 MW",
     type: "Industrial",
-    location: "Gujarat",
+    location: "Surat, Gujarat",
     year: 2024,
-    description: "Industrial solar system for manufacturing operations",
-    image: "https://images.unsplash.com/photo-1735584509085-4a03c468ace4",
+    description: "Rooftop solar system for yarn manufacturing",
+    image: "https://images.unsplash.com/photo-1726866492047-7f9516558c6e",
     featured: false
   },
   {
@@ -266,18 +266,6 @@ export const projects = [
   },
   {
     id: 10,
-    title: "Eagle Fibres Ltd",
-    client: "Eagle Fibres Ltd",
-    capacity: "2.23 MW",
-    type: "Industrial",
-    location: "Surat, Gujarat",
-    year: 2024,
-    description: "Industrial solar for fiber manufacturing",
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d",
-    featured: false
-  },
-  {
-    id: 11,
     title: "Kamdhenu Enterprise",
     client: "Kamdhenu Enterprise",
     capacity: "2.23 MW",
@@ -286,6 +274,18 @@ export const projects = [
     year: 2024,
     description: "Commercial solar installation",
     image: "https://images.unsplash.com/photo-1735584509085-4a03c468ace4",
+    featured: false
+  },
+  {
+    id: 11,
+    title: "Eagle Fibres Ltd",
+    client: "Eagle Fibres Ltd",
+    capacity: "2.23 MW",
+    type: "Industrial",
+    location: "Surat, Gujarat",
+    year: 2024,
+    description: "Industrial solar for fiber manufacturing",
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d",
     featured: false
   },
   {
@@ -426,14 +426,14 @@ export const clients = [
   { name: "Sumeet Industries Ltd", capacity: "26 MW", logo: null },
   { name: "Eagle Sizers", capacity: "5 MW", logo: null },
   { name: "Aarti Synthetics", capacity: "5 MW", logo: null },
-  { name: "Eagle Yarns Pvt Ltd", capacity: "3 MW", logo: null },
-  { name: "Shree Balaji Processors", capacity: "3 MW", logo: null },
   { name: "Accel International", capacity: "3 MW", logo: null },
+  { name: "Shree Balaji Processors", capacity: "3 MW", logo: null },
+  { name: "Eagle Yarns Pvt Ltd", capacity: "3 MW", logo: null },
   { name: "VH PT System", capacity: "2.6 MW", logo: null },
   { name: "Eagle Fashions Pvt Ltd", capacity: "2.6 MW", logo: null },
   { name: "Kusum Silk Mills Pvt Ltd", capacity: "2.3 MW", logo: null },
-  { name: "Eagle Fibres Ltd", capacity: "2.23 MW", logo: null },
   { name: "Kamdhenu Enterprise", capacity: "2.23 MW", logo: null },
+  { name: "Eagle Fibres Ltd", capacity: "2.23 MW", logo: null },
   { name: "Shriyaram Lifestyle LLP", capacity: "2 MW", logo: null },
   { name: "Globela Pharma Pvt Ltd", capacity: "2 MW", logo: null },
   { name: "Globela Industries Pvt Ltd", capacity: "2 MW", logo: null },
