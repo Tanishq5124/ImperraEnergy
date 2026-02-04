@@ -5,7 +5,7 @@ Build a premium, multi-page website for "Imperra Energy Pvt Ltd" - a solar energ
 
 ## Current Architecture
 
-### React/FastAPI Stack (Active)
+### React/FastAPI Stack (Port 3000 - Original)
 ```
 /app
 ├── backend/
@@ -19,12 +19,35 @@ Build a premium, multi-page website for "Imperra Energy Pvt Ltd" - a solar energ
 │   └── package.json
 ```
 
-### Next.js Migration (In Progress)
+### Next.js Stack (Port 3001 - NEW - Migration Complete)
 ```
 /app/nextjs-site/
-├── app/                   # App Router pages (scaffold only)
+├── app/
+│   ├── page.tsx           # Homepage
+│   ├── about/page.tsx     # About page
+│   ├── services/page.tsx  # Services page
+│   ├── process/page.tsx   # Process page
+│   ├── projects/page.tsx  # Projects page
+│   ├── clients/page.tsx   # Clients page
+│   ├── blog/page.tsx      # Blog page
+│   ├── contact/page.tsx   # Contact page
+│   ├── api/contact/route.ts  # Contact API
+│   ├── layout.tsx         # Root layout
+│   └── globals.css        # Global styles
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── HeroSection.tsx
+│   ├── ROICalculator.tsx
+│   ├── FAQSection.tsx
+│   ├── StatsSection.tsx
+│   ├── ServicesSection.tsx
+│   ├── ClientsSection.tsx
+│   ├── CTASection.tsx
+│   └── ui/                # Button, Card, Input, Textarea
 ├── lib/
-│   └── data.ts           # Migrated data (72+ MW, 22 clients)
+│   ├── data.ts            # Company data (72+ MW, 22 clients)
+│   └── utils.ts           # Utility functions
 ├── next.config.js
 ├── tailwind.config.js
 └── package.json
@@ -32,26 +55,29 @@ Build a premium, multi-page website for "Imperra Energy Pvt Ltd" - a solar energ
 
 ## Completed Features
 
-### Phase 1: Basic Website (Complete)
+### Phase 1: Basic Website (Complete - React)
 - [x] Multi-page React website with routing
-- [x] Home, About, Services, Projects, Clients, Blog, Contact pages
+- [x] All pages implemented
 - [x] Mobile-responsive design
 - [x] Contact form with backend integration
 
-### Phase 2: Enhanced Features (Complete)
+### Phase 2: Enhanced Features (Complete - React)
 - [x] Hero Section redesign with trust badges
-- [x] ROI Calculator (formula: System size = (bill / 1300) * 0.55)
-- [x] FAQ Accordion section with 8 Q&As
+- [x] ROI Calculator
+- [x] FAQ Accordion section
 - [x] Backend contact form saves to MongoDB
-- [x] Admin page to view form submissions
+- [x] Admin page to view submissions
 
-### Data Updates (Complete - Dec 2024)
-- [x] Updated MW installed: 72+ MW
-- [x] Updated client count: 22 clients
-- [x] Full client list with capacities updated
+### Phase 3: Next.js Migration (Complete - Dec 2024)
+- [x] Project setup with Next.js 16, TypeScript, Tailwind
+- [x] All components migrated with Framer Motion animations
+- [x] All pages recreated (Home, About, Services, Process, Projects, Clients, Blog, Contact)
+- [x] Contact API route created
+- [x] SEO metadata configured
+- [x] Data updated to 72+ MW, 22 clients
 
 ## Client Data (Source of Truth)
-Total: 72.21 MW from 22 clients
+Total: 72.21 MW from 22 clients (All Solar Parks)
 
 | Client | Capacity |
 |--------|----------|
@@ -81,39 +107,33 @@ Total: 72.21 MW from 22 clients
 ## Pending Tasks
 
 ### P0 - High Priority
-1. **Next.js Migration - Phase 3**: Component & Page Migration
-   - Recreate all UI components in /nextjs-site/components/
-   - Build all pages with App Router
-   - Integrate Framer Motion animations
+1. **Phase 4**: Connect Next.js contact form to MongoDB + email notifications
+2. **Switch primary frontend**: Replace React app with Next.js
 
 ### P1 - Medium Priority
-2. **Next.js Migration - Phase 4**: API Routes & Forms
-   - Create API route for contact form
-   - Implement email notification (Resend/Nodemailer)
-   - Database storage integration
+3. **Phase 5**: Sanity.io CMS integration
+4. **SEO**: Sitemap generation
 
 ### P2 - Low Priority
-3. **Next.js Migration - Phase 5**: CMS & SEO
-   - Sanity.io integration
-   - Sitemap generation
+5. Production deployment configuration
 
 ## Known Issues
 
 ### Blocked
-- **Custom domain API issue**: `imperraenergy.co.in` returns Cloudflare 520 error for backend API calls. Requires platform-level DNS/proxy configuration.
+- **Custom domain API issue**: `imperraenergy.co.in` returns Cloudflare 520 error for backend API calls
 
 ## API Endpoints
+
+### React/FastAPI (Port 8001)
 - `POST /api/contact-inquiries` - Save contact form
 - `GET /api/contact-inquiries` - Retrieve submissions
 
-## Database Schema
-```javascript
-contact_inquiries: {
-  id, name, email, phone, company, 
-  service, message, timestamp, status
-}
-```
+### Next.js (Port 3001)
+- `POST /api/contact` - Save contact form (in-memory, needs MongoDB connection)
+- `GET /api/contact` - Retrieve submissions
 
 ## Tech Stack
-- **Current**: React, FastAPI, MongoDB, CSS
-- **Target**: Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, Sanity.io
+- **Current (React)**: React, FastAPI, MongoDB, CSS
+- **New (Next.js)**: Next.js 16, TypeScript, Tailwind CSS, Framer Motion
+- **Planned**: Sanity.io CMS
+
