@@ -5,80 +5,78 @@ Build a premium, multi-page website for "Imperra Energy Pvt Ltd" - a solar energ
 
 ## Current Architecture
 
-### React/FastAPI Stack (Port 3000 - Original)
+### Next.js Stack (Port 3000 - LIVE)
 ```
-/app
-├── backend/
-│   ├── server.py          # FastAPI with /api/contact-inquiries endpoint
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── components/    # Header, Footer, ContactForm, ROICalculator, FAQSection
-│   │   ├── pages/         # Home, About, Services, Projects, Clients, Contact, Admin
-│   │   └── mock.js        # Central data store (72+ MW, 22 clients)
-│   └── package.json
-```
-
-### Next.js Stack (Port 3001 - NEW - Migration Complete)
-```
-/app/nextjs-site/
+/app/frontend/           # Next.js application (migrated)
 ├── app/
-│   ├── page.tsx           # Homepage
-│   ├── about/page.tsx     # About page
-│   ├── services/page.tsx  # Services page
-│   ├── process/page.tsx   # Process page
-│   ├── projects/page.tsx  # Projects page
-│   ├── clients/page.tsx   # Clients page
-│   ├── blog/page.tsx      # Blog page
-│   ├── contact/page.tsx   # Contact page
-│   ├── api/contact/route.ts  # Contact API
-│   ├── layout.tsx         # Root layout
-│   └── globals.css        # Global styles
+│   ├── page.tsx         # Homepage
+│   ├── about/page.tsx   # About page
+│   ├── services/page.tsx
+│   ├── process/page.tsx
+│   ├── projects/page.tsx
+│   ├── clients/page.tsx
+│   ├── blog/page.tsx
+│   ├── contact/page.tsx
+│   ├── api/contact/route.ts  # Contact API (connects to FastAPI)
+│   ├── sitemap.ts       # SEO Sitemap
+│   ├── robots.ts        # Robots.txt
+│   ├── layout.tsx
+│   └── globals.css
 ├── components/
-│   ├── Header.tsx
-│   ├── Footer.tsx
-│   ├── HeroSection.tsx
-│   ├── ROICalculator.tsx
-│   ├── FAQSection.tsx
-│   ├── StatsSection.tsx
-│   ├── ServicesSection.tsx
-│   ├── ClientsSection.tsx
-│   ├── CTASection.tsx
-│   └── ui/                # Button, Card, Input, Textarea
+│   ├── Header.tsx, Footer.tsx
+│   ├── HeroSection.tsx, ROICalculator.tsx
+│   ├── FAQSection.tsx, StatsSection.tsx
+│   ├── ServicesSection.tsx, ClientsSection.tsx
+│   └── ui/              # Button, Card, Input, Textarea
 ├── lib/
-│   ├── data.ts            # Company data (72+ MW, 22 clients)
-│   └── utils.ts           # Utility functions
-├── next.config.js
-├── tailwind.config.js
+│   ├── data.ts          # Company data (70+ MW, 22 clients)
+│   └── utils.ts
 └── package.json
+
+/app/backend/            # FastAPI backend
+├── server.py           # API with MongoDB integration
+└── requirements.txt
+
+/app/frontend-react-backup/  # Old React app (backup)
 ```
 
 ## Completed Features
 
-### Phase 1: Basic Website (Complete - React)
-- [x] Multi-page React website with routing
-- [x] All pages implemented
-- [x] Mobile-responsive design
-- [x] Contact form with backend integration
-
-### Phase 2: Enhanced Features (Complete - React)
-- [x] Hero Section redesign with trust badges
+### Phase 1-2: Basic Website (Complete)
+- [x] Multi-page website with all pages
+- [x] Hero Section with trust badges
 - [x] ROI Calculator
-- [x] FAQ Accordion section
-- [x] Backend contact form saves to MongoDB
-- [x] Admin page to view submissions
+- [x] FAQ Accordion
+- [x] Contact form with MongoDB storage
 
-### Phase 3: Next.js Migration (Complete - Dec 2024)
-- [x] Project setup with Next.js 16, TypeScript, Tailwind
-- [x] All components migrated with Framer Motion animations
-- [x] All pages recreated (Home, About, Services, Process, Projects, Clients, Blog, Contact)
-- [x] Contact API route created
-- [x] SEO metadata configured
-- [x] Data updated to 72+ MW, 22 clients
+### Phase 3: Next.js Migration (Complete - Feb 2025)
+- [x] Project migrated to Next.js 16 with App Router
+- [x] TypeScript implementation
+- [x] Tailwind CSS styling
+- [x] Framer Motion animations
+- [x] All pages recreated
 
-## Client Data (Source of Truth)
-Total: 72.21 MW from 22 clients (All Solar Parks)
+### Phase 4: API & Form Integration (Complete - Feb 2025)
+- [x] Contact form connected to MongoDB via FastAPI
+- [x] Next.js API route proxies to backend
 
+### Phase 5: SEO & Sitemap (Complete - Feb 2025)
+- [x] sitemap.xml generated
+- [x] robots.txt configured
+- [x] SEO metadata on all pages
+
+### Data Updates (Complete - Feb 2025)
+- [x] Updated to 70+ MW installed
+- [x] Updated company profile with new content
+- [x] All pages reflect new data
+
+## Company Data (Source of Truth)
+- **Total MW Installed**: 70+
+- **Target**: 500 MW in 3 years
+- **Clients**: 22
+- **Project Type**: All Solar Parks
+
+### Client List
 | Client | Capacity |
 |--------|----------|
 | Sumeet Industries Ltd | 26 MW |
@@ -104,36 +102,26 @@ Total: 72.21 MW from 22 clients (All Solar Parks)
 | Samrat Velvets LLP | 1 MW |
 | Gulmohar Embroideries Pvt Ltd | 1 MW |
 
-## Pending Tasks
-
-### P0 - High Priority
-1. **Phase 4**: Connect Next.js contact form to MongoDB + email notifications
-2. **Switch primary frontend**: Replace React app with Next.js
-
-### P1 - Medium Priority
-3. **Phase 5**: Sanity.io CMS integration
-4. **SEO**: Sitemap generation
-
-### P2 - Low Priority
-5. Production deployment configuration
-
-## Known Issues
-
-### Blocked
-- **Custom domain API issue**: `imperraenergy.co.in` returns Cloudflare 520 error for backend API calls
-
 ## API Endpoints
 
-### React/FastAPI (Port 8001)
+### Next.js API (Port 3000)
+- `POST /api/contact` - Submit contact form (proxies to FastAPI)
+- `GET /api/contact` - Retrieve inquiries
+
+### FastAPI Backend (Port 8001)
 - `POST /api/contact-inquiries` - Save contact form
 - `GET /api/contact-inquiries` - Retrieve submissions
 
-### Next.js (Port 3001)
-- `POST /api/contact` - Save contact form (in-memory, needs MongoDB connection)
-- `GET /api/contact` - Retrieve submissions
-
 ## Tech Stack
-- **Current (React)**: React, FastAPI, MongoDB, CSS
-- **New (Next.js)**: Next.js 16, TypeScript, Tailwind CSS, Framer Motion
-- **Planned**: Sanity.io CMS
+- **Frontend**: Next.js 16, TypeScript, Tailwind CSS, Framer Motion
+- **Backend**: FastAPI, MongoDB
+- **SEO**: sitemap.xml, robots.txt
 
+## Known Issues
+- **Custom domain API**: `imperraenergy.co.in` may have Cloudflare 520 errors for API calls (platform-level)
+
+## Future Enhancements (Backlog)
+- Sanity.io CMS integration (for content management)
+- Email notifications for contact form (Resend/Nodemailer)
+- Blog post individual pages
+- Service detail pages
