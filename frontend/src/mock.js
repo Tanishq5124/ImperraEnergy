@@ -2,20 +2,20 @@
 
 export const companyInfo = {
   name: "Imperra Energy Pvt. Ltd.",
-  tagline: "ENERGY Engineered for tomorrow",
+  tagline: "Accelerating India's Solar Revolution",
   founded: "Recent",
   rating: "Fast-Scaling EPC",
   phone: "+91 93779 99900",
   email: "imperraenergypvtltd@gmail.com",
   address: "203, 2nd Floor, Orleans Complex, Sosyo Circle, Althan, Surat - 395017",
   experience: "Emerging",
-  totalMW: "72+",
+  totalMW: "70+",
   targetMW: "500",
   timeframe: "Next 3 Years"
 };
 
 export const stats = [
-  { label: "MW Installed", value: 72, suffix: "+" },
+  { label: "MW Installed", value: 70, suffix: "+" },
   { label: "Active Clients", value: 22, suffix: "+" },
   { label: "Target (3 Years)", value: 500, suffix: " MW" },
   { label: "Pan-India Presence", value: 15, suffix: "+", subtext: "States" }
@@ -27,7 +27,7 @@ export const services = [
     title: "Ground-Mounted Solar Parks",
     slug: "ground-mounted-solar",
     shortDesc: "Large-scale solar infrastructure for utility and commercial applications",
-    fullDesc: "Specializing in ground-mounted solar power projects with complete EPC services. From site selection to commissioning, we deliver utility-scale solar installations with proven track record of 50+ MW.",
+    fullDesc: "Specializing in ground-mounted solar power projects with complete EPC services. From site selection to commissioning, we deliver utility-scale solar installations with proven track record of 70+ MW.",
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
     features: [
       "Large-scale project execution (up to 26 MW single site)",
@@ -37,7 +37,7 @@ export const services = [
       "Long-term O&M contracts",
       "Fast-track project delivery"
     ],
-    capacity: "72+ MW Installed"
+    capacity: "70+ MW Installed"
   },
   {
     id: 2,
@@ -449,23 +449,23 @@ export const clients = [
 
 export const whyChoose = [
   {
-    title: "Premium-Grade Materials",
-    description: "Only Tier-1 solar modules and components from globally recognized manufacturers",
+    title: "Proven Execution Capability",
+    description: "70+ MW installed capacity demonstrating strong project management and delivery",
     icon: "Award"
   },
   {
-    title: "Precision Workmanship",
-    description: "Engineering excellence with stringent quality control at every project phase",
+    title: "Strong Engineering",
+    description: "Experienced technical leadership with scalable project execution systems",
     icon: "Target"
   },
   {
-    title: "Expert-Led Maintenance",
-    description: "Proactive O&M services ensuring optimal performance and longevity",
+    title: "Customized Solutions",
+    description: "Tailored energy solutions based on client needs, site conditions, and financial objectives",
     icon: "Wrench"
   },
   {
-    title: "Proven Industry Track Record",
-    description: "72+ MW installed capacity with 22 successful client installations",
+    title: "Long-term Focus",
+    description: "Commitment to performance, reliability, and sustainability over asset lifecycles",
     icon: "TrendingUp"
   }
 ];
