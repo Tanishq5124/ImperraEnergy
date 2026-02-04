@@ -517,22 +517,22 @@ export const blogPosts = [
 export const testimonials = [
   {
     id: 1,
-    client: "TATA Solar",
-    quote: "Imperra Energy's engineering precision and execution speed helped us deliver multiple projects across states on schedule.",
+    client: "Sumeet Industries Ltd",
+    quote: "Imperra Energy successfully delivered our 26 MW solar project with exceptional engineering quality and project management. The system performance has exceeded our expectations.",
     person: "Project Director",
     rating: 5
   },
   {
     id: 2,
-    client: "Reliance Industries",
-    quote: "Outstanding technical capability and commitment to quality. Our 10 MW rooftop installation exceeded performance expectations.",
+    client: "Eagle Group",
+    quote: "We've partnered with Imperra Energy for multiple installations totaling over 13 MW across our facilities. Their technical expertise and execution speed are outstanding.",
     person: "Energy Manager",
     rating: 5
   },
   {
     id: 3,
-    client: "Sumeet Industries",
-    quote: "The 30 MW solar park was completed within timeline with exceptional quality standards. Highly professional team.",
+    client: "Kusum Silk Mills",
+    quote: "The 2.3 MW solar installation has significantly reduced our power costs. Imperra's team handled everything from design to commissioning professionally.",
     person: "Managing Director",
     rating: 5
   }
