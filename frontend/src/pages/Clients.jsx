@@ -71,13 +71,15 @@ const Clients = () => {
                 key={index}
                 className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 group"
               >
-                <CardContent className="p-4 flex flex-col items-center justify-center h-28">
+                <CardContent className="p-4 flex flex-col items-center justify-center h-32">
                   {/* Logo Circle with Initials */}
                   <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${getLogoColor(client.name)} flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}>
                     <span className="text-white font-bold text-sm">{getInitials(client.name)}</span>
                   </div>
                   {/* Company Name */}
-                  <span className="text-sm font-semibold text-gray-700 text-center leading-tight">{client.name}</span>
+                  <span className="text-sm font-semibold text-gray-700 text-center leading-tight mb-1">{client.name}</span>
+                  {/* Capacity Badge */}
+                  <span className="text-xs bg-[#a3e635]/10 text-[#1a2332] px-2 py-0.5 rounded-full font-semibold">{client.capacity}</span>
                 </CardContent>
               </Card>
             ))}
