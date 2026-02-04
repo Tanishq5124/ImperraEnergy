@@ -107,51 +107,51 @@ export const solarModels = [
 export const processSteps = [
   {
     id: 1,
-    title: "Brainstorming",
-    description: "Understanding your energy needs and project objectives",
-    icon: "Lightbulb"
+    title: "Engineering & Design",
+    description: "Detailed system design and optimization tailored to site conditions",
+    icon: "PenTool"
   },
   {
     id: 2,
-    title: "Site Feasibility",
-    description: "Comprehensive site assessment and resource analysis",
+    title: "Site Assessment",
+    description: "Comprehensive evaluation of site conditions and energy requirements",
     icon: "MapPin"
   },
   {
     id: 3,
-    title: "Engineering Design",
-    description: "Detailed system design and optimization",
-    icon: "PenTool"
+    title: "Procurement",
+    description: "Sourcing high-quality components from trusted manufacturers",
+    icon: "Package"
   },
   {
     id: 4,
-    title: "Documentation",
-    description: "Complete technical and regulatory documentation",
-    icon: "FileText"
-  },
-  {
-    id: 5,
-    title: "Government Liaising",
-    description: "Approvals, permits, and subsidy facilitation",
-    icon: "Shield"
-  },
-  {
-    id: 6,
-    title: "Project Planning",
-    description: "Detailed execution plan and resource allocation",
+    title: "Project Management",
+    description: "Strong planning, risk management, and timeline execution",
     icon: "Calendar"
   },
   {
-    id: 7,
-    title: "Quality Assurance",
-    description: "Stringent quality control at every stage",
+    id: 5,
+    title: "Installation",
+    description: "Professional on-site execution by certified technical teams",
+    icon: "Wrench"
+  },
+  {
+    id: 6,
+    title: "Commissioning",
+    description: "System testing, grid integration, and performance verification",
     icon: "CheckCircle2"
   },
   {
+    id: 7,
+    title: "Performance Optimization",
+    description: "Ongoing monitoring and optimization for peak efficiency",
+    icon: "TrendingUp"
+  },
+  {
     id: 8,
-    title: "Manpower Management",
-    description: "Skilled workforce deployment and coordination",
-    icon: "Users"
+    title: "Quality Assurance",
+    description: "Adherence to regulatory and quality standards throughout",
+    icon: "Shield"
   }
 ];
 
