@@ -39,7 +39,7 @@ export function Footer() {
             </div>
             <p className="text-gray-400 mb-6 text-sm leading-relaxed">
               Fast-scaling solar EPC company delivering high-performance renewable energy solutions. 
-              72+ MW installed, targeting 500 MW in 3 years.
+              70+ MW installed, targeting 500 MW in 3 years.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="p-2 bg-white/10 rounded-lg hover:bg-[#a3e635] hover:text-[#1a2332] transition-colors">
