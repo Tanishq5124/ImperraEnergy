@@ -50,7 +50,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
           >
-            India's fast-scaling solar EPC company. From 72+ MW installed to 500 MW target 
+            India's fast-scaling solar EPC company. From 70+ MW installed to 500 MW target 
             in 3 years. Ground-mounted solar parks for industries across India.
           </motion.p>
 
@@ -63,7 +63,7 @@ export function HeroSection() {
           >
             <div className="flex items-center gap-2">
               <Award className="w-5 h-5 text-[#a3e635]" />
-              <span className="text-white font-semibold">72+ MW Installations</span>
+              <span className="text-white font-semibold">70+ MW Installations</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-[#a3e635]" />
