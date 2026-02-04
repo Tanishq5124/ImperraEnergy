@@ -1,6 +1,6 @@
 var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/contact/route.js")
-R.c("server/chunks/[externals]_next_dist_a6d89067._.js")
-R.c("server/chunks/[root-of-the-server]__70a04c9a._.js")
+R.c("server/chunks/[root-of-the-server]__781abf71._.js")
+R.c("server/chunks/[root-of-the-server]__04491374._.js")
 R.c("server/chunks/frontend__next-internal_server_app_api_contact_route_actions_67c238cd.js")
 R.m(17681)
 module.exports=R.m(17681).exports
