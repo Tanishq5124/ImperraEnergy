@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://imperraenergy.co.in'),
   title: {
-    default: 'Imperra Energy - Leading Solar EPC Company | 50+ MW Installed',
+    default: 'Imperra Energy - Leading Solar EPC Company | 72+ MW Installed',
     template: '%s | Imperra Energy'
   },
-  description: 'Fast-scaling solar EPC company in India. 50+ MW installed, targeting 500 MW in 3 years. Ground-mounted solar parks, industrial solar solutions. Contact: +91 93779 99900',
+  description: 'Fast-scaling solar EPC company in India. 72+ MW installed, targeting 500 MW in 3 years. Ground-mounted solar parks, industrial solar solutions. Contact: +91 93779 99900',
   keywords: [
     'solar EPC',
     'solar power company',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://imperraenergy.co.in',
-    title: 'Imperra Energy - Leading Solar EPC Company | 50+ MW Installed',
-    description: 'Fast-scaling solar EPC company with 50+ MW installed across India. Specializing in ground-mounted solar parks and industrial solar solutions.',
+    title: 'Imperra Energy - Leading Solar EPC Company | 72+ MW Installed',
+    description: 'Fast-scaling solar EPC company with 72+ MW installed across India. Specializing in ground-mounted solar parks and industrial solar solutions.',
     siteName: 'Imperra Energy',
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Imperra Energy - Solar EPC Company',
-    description: '50+ MW installed | 500 MW target in 3 years | Industrial & Ground-mounted Solar Solutions',
+    description: '72+ MW installed | 500 MW target in 3 years | Industrial & Ground-mounted Solar Solutions',
     images: ['/og-image.jpg'],
   },
   robots: {
