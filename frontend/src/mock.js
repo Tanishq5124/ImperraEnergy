@@ -37,7 +37,7 @@ export const services = [
       "Long-term O&M contracts",
       "Fast-track project delivery"
     ],
-    capacity: "50+ MW Installed"
+    capacity: "72+ MW Installed"
   },
   {
     id: 2,
@@ -464,8 +464,8 @@ export const whyChoose = [
     icon: "Wrench"
   },
   {
-    title: "Proven Industry Legacy",
-    description: "20+ years of sectoral expertise with 300+ MW successful installations",
+    title: "Proven Industry Track Record",
+    description: "72+ MW installed capacity with 22 successful client installations",
     icon: "TrendingUp"
   }
 ];

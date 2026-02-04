@@ -9,7 +9,7 @@ export const companyInfo = {
   
   // Updated Stats
   stats: {
-    installed: "50+", // MW Installed
+    installed: "72+", // MW Installed
     target: "500", // MW Target in 3 years
     clients: "22+", // Active Clients
     statesCovered: "Pan-India"
@@ -18,7 +18,7 @@ export const companyInfo = {
 
 // Updated Hero Stats
 export const stats = [
-  { label: "MW Installed", value: 50, suffix: "+" },
+  { label: "MW Installed", value: 72, suffix: "+" },
   { label: "Active Projects", value: 22, suffix: "+" },
   { label: "Target (3 Years)", value: 500, suffix: " MW" },
   { label: "Pan-India Presence", value: 15, suffix: "+", subtext: "States" }
@@ -29,14 +29,14 @@ export const customers = [
   { name: "Sumeet Industries Ltd", capacity: "26 MW", type: "Industrial", location: "Gujarat" },
   { name: "Eagle Sizers", capacity: "5 MW", type: "Industrial", location: "Surat" },
   { name: "Aarti Synthetics", capacity: "5 MW", type: "Industrial", location: "Gujarat" },
-  { name: "Eagle Yarns Pvt Ltd", capacity: "3 MW", type: "Industrial", location: "Surat" },
-  { name: "Shree Balaji Processors", capacity: "3 MW", type: "Industrial", location: "Gujarat" },
   { name: "Accel International", capacity: "3 MW", type: "Industrial", location: "Gujarat" },
+  { name: "Shree Balaji Processors", capacity: "3 MW", type: "Industrial", location: "Gujarat" },
+  { name: "Eagle Yarns Pvt Ltd", capacity: "3 MW", type: "Industrial", location: "Surat" },
   { name: "VH PT System", capacity: "2.6 MW", type: "Industrial", location: "Gujarat" },
   { name: "Eagle Fashions Pvt Ltd", capacity: "2.6 MW", type: "Industrial", location: "Surat" },
   { name: "Kusum Silk Mills Pvt Ltd", capacity: "2.3 MW", type: "Textile", location: "Surat" },
-  { name: "Eagle Fibres Ltd", capacity: "2.23 MW", type: "Industrial", location: "Surat" },
   { name: "Kamdhenu Enterprise", capacity: "2.23 MW", type: "Industrial", location: "Gujarat" },
+  { name: "Eagle Fibres Ltd", capacity: "2.23 MW", type: "Industrial", location: "Surat" },
   { name: "Shriyaram Lifestyle LLP", capacity: "2 MW", type: "Textile", location: "Surat" },
   { name: "Globela Pharma Pvt Ltd", capacity: "2 MW", type: "Pharmaceutical", location: "Gujarat" },
   { name: "Globela Industries Pvt Ltd", capacity: "2 MW", type: "Industrial", location: "Gujarat" },
@@ -66,7 +66,7 @@ export const services = [
       "Long-term O&M contracts",
       "Fast-track project delivery"
     ],
-    capacity: "50+ MW Installed"
+    capacity: "72+ MW Installed"
   },
   {
     id: 2,
@@ -106,7 +106,7 @@ export const services = [
 export const companyProfile = {
   overview: "Imperra Energy Pvt. Ltd. is a fast-scaling solar EPC and energy solutions company formed as a strategic joint venture between two established industry groups. Founded with a mission to accelerate adoption of reliable, high-performance solar energy systems through strong engineering, efficient execution, and long-term sustainability.",
   
-  milestone: "Within a short span of inception, successfully achieved 50 MW solar power installation, demonstrating technical strength and project management efficiency.",
+  milestone: "Within a short span of inception, successfully achieved 72 MW solar power installation, demonstrating technical strength and project management efficiency.",
   
   target: "Ambitious yet structured expansion roadmap to establish over 500 MW of solar capacity within the next three years.",
   
@@ -130,7 +130,7 @@ export const companyProfile = {
   ],
   
   whyChoose: [
-    "Proven ability to execute large-scale solar projects (50+ MW installed)",
+    "Proven ability to execute large-scale solar projects (72+ MW installed)",
     "Strong engineering and project management capabilities",
     "Financially backed growth platform",
     "Customized energy solutions based on client needs",
