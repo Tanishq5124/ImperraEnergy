@@ -3,75 +3,75 @@
 export const companyInfo = {
   name: "Imperra Energy Pvt. Ltd.",
   tagline: "ENERGY Engineered for tomorrow",
-  founded: 2006,
-  rating: "SMERA 1B",
+  founded: "Recent",
+  rating: "Fast-Scaling EPC",
   phone: "+91 93779 99900",
   email: "imperraenergypvtltd@gmail.com",
   address: "203, 2nd Floor, Orleans Complex, Sosyo Circle, Althan, Surat - 395017",
-  experience: "20+",
-  totalMW: "300+",
-  thermalMW: "700",
-  windSolarMW: "150"
+  experience: "Emerging",
+  totalMW: "50+",
+  targetMW: "500",
+  timeframe: "Next 3 Years"
 };
 
 export const stats = [
-  { label: "MW Installed", value: 300, suffix: "+" },
-  { label: "Years Expertise", value: 20, suffix: "+" },
-  { label: "Thermal MW Delivered", value: 700, suffix: "" },
+  { label: "MW Installed", value: 50, suffix: "+" },
+  { label: "Active Clients", value: 22, suffix: "+" },
+  { label: "Target (3 Years)", value: 500, suffix: " MW" },
   { label: "Pan-India Presence", value: 15, suffix: "+", subtext: "States" }
 ];
 
 export const services = [
   {
     id: 1,
-    title: "Solar Park EPC",
-    slug: "solar-park-epc",
-    shortDesc: "Large-scale ground-mounted solar power plants with end-to-end EPC services",
-    fullDesc: "Complete Engineering, Procurement, and Construction services for utility-scale solar parks. From feasibility studies to commissioning, we deliver turnkey solar power solutions with precision engineering and quality assurance.",
+    title: "Ground-Mounted Solar Parks",
+    slug: "ground-mounted-solar",
+    shortDesc: "Large-scale solar infrastructure for utility and commercial applications",
+    fullDesc: "Specializing in ground-mounted solar power projects with complete EPC services. From site selection to commissioning, we deliver utility-scale solar installations with proven track record of 50+ MW.",
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276",
     features: [
-      "Site assessment and feasibility studies",
-      "Engineering design and optimization",
-      "Premium-grade module procurement",
-      "Construction and installation",
-      "Grid synchronization and commissioning",
-      "Long-term O&M support"
+      "Large-scale project execution (up to 26 MW single site)",
+      "Complete site development and civil works",
+      "Advanced grid integration solutions",
+      "Performance optimization and monitoring",
+      "Long-term O&M contracts",
+      "Fast-track project delivery"
     ],
-    capacity: "300+ MW Installed"
+    capacity: "50+ MW Installed"
   },
   {
     id: 2,
-    title: "Rooftop Solar EPC",
-    slug: "rooftop-solar-epc",
-    shortDesc: "Industrial and commercial rooftop solar installations for energy independence",
-    fullDesc: "Specialized rooftop solar solutions for industries and commercial establishments. We transform your rooftop into a power generation asset with custom-designed systems that maximize energy output and ROI.",
+    title: "Industrial Solar Solutions",
+    slug: "industrial-solar",
+    shortDesc: "Customized solar solutions for industries and commercial establishments",
+    fullDesc: "Tailored solar installations for textile, pharmaceutical, and manufacturing industries. Proven expertise in delivering reliable power solutions that reduce operational costs and ensure energy security.",
     image: "https://images.unsplash.com/photo-1726866672851-5b99c837603c",
     features: [
-      "Structural load analysis",
-      "Custom system design",
-      "Zero-capex financing options",
+      "Industry-specific system design",
+      "Rooftop and ground-mount options",
+      "Energy audit and optimization",
       "Net metering facilitation",
-      "Remote monitoring systems",
-      "Preventive maintenance"
+      "Zero-downtime installation",
+      "Comprehensive warranty coverage"
     ],
-    capacity: "100+ MW Commissioned"
+    capacity: "22+ Active Industrial Clients"
   },
   {
     id: 3,
-    title: "Solar Finance & Investor Services",
-    slug: "solar-finance",
-    shortDesc: "Tailored financing solutions and comprehensive investor guidance",
-    fullDesc: "Comprehensive financial solutions for solar projects including low-interest loans, equity options, and complete investor services from project feasibility to commissioning and beyond.",
+    title: "Scalable Solar Infrastructure",
+    slug: "scalable-solar",
+    shortDesc: "Future-ready solar systems designed for expansion and growth",
+    fullDesc: "Building solar infrastructure that grows with your business. Our scalable solutions allow for phased implementation while maintaining system efficiency and performance.",
     image: "https://images.unsplash.com/photo-1735584509085-4a03c468ace4",
     features: [
-      "Low-interest project financing",
-      "Equity partnership options",
-      "Subsidy and incentive management",
-      "Investment feasibility analysis",
-      "Risk assessment and mitigation",
-      "Return on investment optimization"
+      "Modular system architecture",
+      "Expansion-ready design",
+      "Flexible financing options",
+      "Government subsidy assistance",
+      "Accelerated depreciation benefits",
+      "Multi-site project management"
     ],
-    capacity: "150 MW Wind-Solar Hybrid Advisory"
+    capacity: "500 MW Target Next 3 Years"
   }
 ];
 
